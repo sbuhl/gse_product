@@ -3,12 +3,19 @@
 		<record id="gse_product_template_product_tree" model="ir.ui.view">
 			<field name="name">gse_product.product.template.product.tree</field>
 			<field name="model">product.template</field>
-			<field name="inherit_id" ref="product.template.product.website.form"/>
+			<field name="inherit_id" ref="website_sale.product_template_form_view"/>
 			<field name="priority">99</field>
 			<field name="arch" type="xml">
 				<data>
 					<xpath expr="//field[@name='product_template_image_ids']" position="after">
-						<field name="technical_sheet"</field>
+						<group name="product_attachment" string="Product Attachment" attrs="{'invisible': [('sale_ok','=',False)]}">
+							<field name="datasheet"/>
+							<field name="manual"/>
+							<field name="schema"/>
+							<field name="certificate"/>
+							<field name="misc"/>
+						</group>
+						
 					</xpath>
 
 				</data>

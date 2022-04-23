@@ -20,7 +20,7 @@
     'depends': ['base'],
 
     'data': [        
-        'views/res_partner.xml',
+        'views/product.xml',
     ],
     
 }

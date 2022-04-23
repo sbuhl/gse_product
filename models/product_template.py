@@ -6,5 +6,8 @@ from odoo import api, models, fields
 class ProductTemplate(models.Model):
     _inherit = 'product.template'
 
-    technical_sheet = fields.Binary();
-    
+    datasheet = fields.Binary();
+    manual = fields.Binary();
+    schema = fields.Binary();
+    certificate = fields.Binary();
+    misc = fields.Binary();
