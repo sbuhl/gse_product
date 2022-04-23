@@ -7,13 +7,25 @@
 			<field name="priority">99</field>
 			<field name="arch" type="xml">
 				<data>
-					<xpath expr="//field[@name='product_template_image_ids']" position="after">
+					<xpath expr="//group[@name='product_template_images']" position="after">
 						<group name="product_attachment" string="Product Attachment" attrs="{'invisible': [('sale_ok','=',False)]}">
-							<field name="datasheet"/>
-							<field name="manual"/>
-							<field name="schema"/>
-							<field name="certificate"/>
-							<field name="misc"/>
+
+
+							<field name="datasheet_name" invisible="1"/>
+							<field name="datasheet_file" filename="datasheet_name"/>
+
+							<field name="manual_name" invisible="1"/>
+							<field name="manual_file" filename="manual_name"/>
+
+							<field name="schema_name" invisible="1"/>
+							<field name="schema_file" filename="schema_name"/>
+
+							<field name="certificate_name" invisible="1"/>
+							<field name="certificate_file" filename="certificate_name"/>
+
+							<field name="misc_name" invisible="1"/>
+							<field name="misc_file" filename="misc_name"/>
+
 						</group>
 						
 					</xpath>
