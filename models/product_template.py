@@ -1,24 +1,46 @@
-# -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
-from odoo import api, models, fields
+
+from odoo import api, fields, models
+
+from odoo.addons.website.models import ir_http
 
 
 class ProductTemplate(models.Model):
-    _inherit = 'product.template'
+    _inherit = "product.template"
 
-    datasheet_name = fields.Char();
-    datasheet_file = fields.Binary();
+    website_attachment_ids = fields.Many2many(
+        string="Website attachments",
+        comodel_name="ir.attachment",
+        context={"default_public": True, "hide_attachment_products": True},
+        domain=lambda self, *args, **kwargs: (
+            self._domain_website_attachment_ids(*args, **kwargs)
+        ),
+        help="Files publicly downloadable from the product eCommerce page.",
+    )
 
-    manual_name = fields.Char();
-    manual_file = fields.Binary();
-    
-    schema_name = fields.Char();
-    schema_file = fields.Binary();
-
-    certificate_name = fields.Char();
-    certificate_file = fields.Binary();
-
-    misc_name = fields.Char();
-    misc_file = fields.Binary();
-
-
+    @api.model
+    def _domain_website_attachment_ids(self):
+        """Get domain for website attachments."""
+        domain = [
+            # Only use public attachments
+            ("public", "=", True),
+            # Exclude Odoo asset files to avoid confusing the user
+            "!",
+            ("name", "=ilike", "%.assets%.js"),
+            "!",
+            ("name", "=ilike", "%.assets%.css"),
+            "!",
+            ("name", "=ilike", "web_editor%"),
+            "!",
+            ("name", "=ilike", "/web/content/%.assets%.js"),
+            "!",
+            ("name", "=ilike", "/web/content/%.assets%.css"),
+            "!",
+            ("name", "=ilike", r"/web/content/%/web\_editor.summernote%.js"),
+            "!",
+            ("name", "=ilike", r"/web/content/%/web\_editor.summernote%.css"),
+        ]
+        # Filter by website domain in frontend
+        if ir_http.get_request_website():
+            website = self.env["website"].get_current_website()
+            domain += website.website_domain()
+        return domain

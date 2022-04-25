@@ -17,10 +17,10 @@
     'license': 'LGPL-3',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','website_sale'],
+    'depends': ['website_sale'],
 
     'data': [        
-        'views/product.xml',
+        'views/product_template.xml',
     ],
     
 }
