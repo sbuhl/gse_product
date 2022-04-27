@@ -20,6 +20,8 @@
     'depends': ['website_sale'],
 
     'data': [        
+        'templates/product_template.xml',
+        'views/ir_attachment.xml',
         'views/product_template.xml',
     ],
     
