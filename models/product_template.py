@@ -14,7 +14,7 @@ class ProductTemplate(models.Model):
         domain=lambda self, *args, **kwargs: (
             self._domain_website_attachment_ids(*args, **kwargs)
         ),
-        help="Files publicly downloadable from the product eCommerce page.",
+        help="Files publicly downloadable from the product eCommerce page. Only public attachments can be used or created here. Removing one attachment from this list does not delete or unpublish it from your database.",
     )
 
     @api.model
