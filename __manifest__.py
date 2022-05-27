@@ -1,3 +1,7 @@
+# Copyright 2020 Tecnativa - Jairo Llopis
+# Copyright 2021 Tecnativa - Víctor Martínez
+# Copyright 2021 Tecnativa - Pedro M. Baeza
+# License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl).
 # -*- coding: utf-8 -*-
 {
     'name': "gse_product",
@@ -9,15 +13,17 @@
         
     """,
 
-    'author': "Sébastien Bühl",
-    'website': "http://www.buhl.be",
+    "website": "https://github.com/OCA/e-commerce",
+    "author": "Tecnativa, Odoo Community Association (OCA)",
+    "maintainers": ["Yajo"],
+    "license": "LGPL-3",
 
     'category': 'Customizations',
-    'version': '0.1.2',
+    'version': '0.1.3',
     'license': 'LGPL-3',
 
     # any module necessary for this one to work correctly
-    'depends': ['website_sale'],
+    'depends': ['website_sale', 'delivery'],
 
     'data': [        
         'templates/product_template.xml',

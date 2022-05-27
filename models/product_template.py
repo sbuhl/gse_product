@@ -17,6 +17,8 @@ class ProductTemplate(models.Model):
         help="Files publicly downloadable from the product eCommerce page. Only public attachments can be used or created here. Removing one attachment from this list does not delete or unpublish it from your database.",
     )
 
+    origin = fields.Many2one('res.country', string='Country of Origin', ondelete='restrict')
+
     @api.model
     def _domain_website_attachment_ids(self):
         """Get domain for website attachments."""
