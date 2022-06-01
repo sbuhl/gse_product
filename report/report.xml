@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="stock_picking_sbu_menu" model="ir.actions.report">
+            <field name="name">HS et Country</field>
+            <field name="model">stock.picking</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">gse_product.stock_picking_sbu</field>
+            <field name="report_file">gse_product.stock_picking_sbu</field>
+            <field name="binding_model_id" ref="stock.model_stock_picking"/>
+            <field name="binding_type">report</field>
+        </record>
+       <!--  <record id="delivery_slip_sbu" model="ir.actions.report">
+            <field name="name">Delivery Slip GS</field>
+            <field name="sequence">99</field>
+            <field name="model">stock.picking</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">gse_product.delivery_slip_sbu</field>
+            <field name="report_file">gse_product.delivery_slip_sbu</field>
+            <field name="binding_model_id" ref="stock.model_stock_picking"/>
+            <field name="binding_type">report</field>
+        </record> -->
+    </data>
+</odoo>

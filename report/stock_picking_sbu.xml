@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<template id="stock_picking_sbu" inherit_id="stock.report_picking" primary="True">
+		<xpath expr="//thead/tr/th[@name='th_serial_number']" position="after">
+			<th name="th_hsCode" class="text-center">
+				<strong>HS Code</strong>
+			</th>
+			<th name="th_origin" class="text-center">
+				<strong>Country of Origin</strong>
+			</th>
+		</xpath>
+		<xpath expr="//tbody/t/tr/td[5]" position="after">
+			<td name="td_hsCode" class="text-center">
+				<span t-field="o.product_id.hs_code"/>
+			</td>
+			<td name="td_origin" class="text-center">
+				<span t-field="o.product_id.origin.name"/>
+			</td>
+		</xpath>
+	</template>
+</odoo>

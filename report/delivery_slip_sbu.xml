@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<template id="delivery_slip_sbu" inherit_id="stock.report_delivery_document">
+		<data>
+			<xpath expr="/t/t/t/div/table[1]" position="after"><div class="row"><div class="col-6"><span>New Column</span></div><div class="col-6"><span>New Column</span></div></div></xpath>
+		</data>
+	</template>
+</odoo>

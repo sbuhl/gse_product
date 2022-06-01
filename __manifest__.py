@@ -19,16 +19,19 @@
     "license": "LGPL-3",
 
     'category': 'Customizations',
-    'version': '0.1.3',
+    'version': '0.1.4',
     'license': 'LGPL-3',
 
     # any module necessary for this one to work correctly
-    'depends': ['website_sale', 'delivery'],
+    'depends': ['website_sale', 'delivery', 'stock'],
 
     'data': [        
         'templates/product_template.xml',
         'views/ir_attachment.xml',
         'views/product_template.xml',
+        'report/report.xml',
+        'report/stock_picking_sbu.xml',
+        # 'report/delivery_slip_sbu.xml',
     ],
     
 }
