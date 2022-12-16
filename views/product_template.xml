@@ -34,7 +34,14 @@
             </xpath>
         </field>
     </record>
-
-
-    
+    <record id="product_template_tree_image" model="ir.ui.view">
+        <field name="name">Product Template Image</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_tree_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='priority']" position="after">
+                <field name="image_128" optional="hide" options="{&quot;size&quot;:[0,90]}" widget="image"/>
+            </xpath>
+        </field>
+    </record>    
 </data>
