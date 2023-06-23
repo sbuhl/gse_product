@@ -19,7 +19,7 @@
     "license": "LGPL-3",
 
     'category': 'Customizations',
-    'version': '0.1.5',
+    'version': '0.1.6',
     'license': 'LGPL-3',
 
     # any module necessary for this one to work correctly
