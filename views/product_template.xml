@@ -8,8 +8,9 @@
         <field name="arch" type="xml">
             <group name="description" position="after">
                 <group name="website_attachments" string="Website Attachments">
-                    <field name="website_attachment_ids" nolabel="1">
-                        <tree default_order="website_name,name,id">
+                    <field name="website_attachment_ids" nolabel="1" style="width:350px">
+                                 
+                        <tree default_order="website_name,name,id" >
                             <field name="website_name" />
                             <field name="name" string="File Name" />
                             <field
