@@ -9,13 +9,13 @@
 				<strong>Country of Origin</strong>
 			</th>
 		</xpath>
-		<xpath expr="//tbody/t/tr/td[5]" position="after">
+		<!-- <xpath expr="//tbody/t/tr/td[5]" position="after">
 			<td name="td_hsCode" class="text-center">
 				<span t-field="o.product_id.hs_code"/>
 			</td>
 			<td name="td_origin" class="text-center">
 				<span t-field="o.product_id.origin.name"/>
 			</td>
-		</xpath>
+		</xpath> -->
 	</template>
 </odoo>

@@ -19,11 +19,11 @@
     "license": "LGPL-3",
 
     'category': 'Customizations',
-    'version': '0.1.6',
+    'version': '17.0.0.1',
     'license': 'LGPL-3',
 
     # any module necessary for this one to work correctly
-    'depends': ['website_sale', 'delivery', 'stock'],
+    'depends': ['website_sale', 'delivery', 'stock', 'stock_delivery'],
 
     'data': [        
         'templates/product_template.xml',
