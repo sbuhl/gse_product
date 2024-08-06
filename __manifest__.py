@@ -27,7 +27,7 @@
 
     'data': [        
         'templates/product_template.xml',
-        'views/ir_attachment.xml',
+        #'views/ir_attachment.xml',
         'views/product_template.xml',
         'report/report.xml',
         'report/stock_picking_sbu.xml',
